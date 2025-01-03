@@ -1,0 +1,187 @@
+/* Base styles */
+:root {
+  --background-color: #ffffff;
+  --background-color-active: #f0f8ff;
+  --text-color: #000000;
+  --border-color: #007aff;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --background-color: #121212;
+  --background-color-active: #f0f8ff;
+  --text-color: #ffffff;
+  --border-color: #0a84ff;
+}
+
+html {
+  scroll-behavior: contain;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  scroll-behavior: contain;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  padding: 0px 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header .description {
+  border-color: var(--border-color);
+}
+
+/* Wrapper for Side-by-Side Layout */
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  gap: 20px;
+  justify-content: center;
+  max-width: auto;
+  padding: 0 80px 40px 0px;
+}
+
+.section {
+  padding-top: 100px; /* Make first section appears after nav bar */
+  margin-bottom: 80px;
+  margin-left: 40px;
+}
+
+/* Static Image Container */
+.image-container {
+  display: flex;
+  flex: 2; /* Makes the image container take smaller part of the layout */
+  position: sticky;
+  top: 40px;
+  height: calc(100dvh - 80px); /* Adjust for a consistent height */
+  padding: 80px 40px 20px 40px; 
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-active);
+  overflow: hidden;
+}
+
+.image-container.hidden {
+  display: none;
+}
+
+.image {
+  top: 200px; /* Keeps it fixed while scrolling */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* max-height: 100%; */
+  object-fit: contain;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image.hidden {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Description Section */
+.descriptions {
+  flex: 1; /* Makes the descriptions section take two parts of the layout */
+  padding: 0;
+  position: relative;
+  margin-bottom: 83vh;
+}
+
+/* Highlight for Active Description */
+.description {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  border-left: 4px solid transparent;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.description.active {
+  border-color: var(--border-color);
+  background-color: var(--background-color-active);
+}
+
+/* Section customization */
+#overview {
+  margin: 0;
+  padding: 80px 40px 80px 40px;
+  position: relative;
+  color: #fff;
+  background-image: url('https://docs-assets.developer.apple.com/published/fb8a3ef2d00880b8b789c05f9926aaf9/100H00.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#overview .content {
+  margin-left: 40px; /* margin left for content only*/
+
+/* Code Styling */
+.image-container pre {
+  margin: 0;
+  font-family: "SF Mono", "Menlo", "Consolas", "Courier New", monospace;
+  font-size: 28px;
+  background-color: #1e1e1e; /* Xcode's dark background */
+  color: #d4d4d4; /* Default text color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Handle long lines of code */
+  white-space: pre-wrap;
+  line-height: 1.5;
+  bottom: 500px;
+}
+
+/* Syntax highlighting */
+.image-container .keyword {
+  color: #c586c0; /* Purple for keywords */
+}
+
+.image-container .type {
+  color: #4ec9b0; /* Cyan for types */
+}
+
+.image-container .string {
+  color: #ce9178; /* Light red for strings */
+}
+
+.image-container .function {
+  color: #dcdcaa; /* Yellow for function names */
+}
+
+.image-container .comment {
+  color: #6a9955; /* Green for comments */
+  font-style: italic;
+}

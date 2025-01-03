@@ -1,0 +1,21 @@
+{
+  "name": "tutorials",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server",
+    "format": "prettier --write \"**/*.{html,css,js}\"",
+    "build:css": "postcss styles.css -o dist/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.4.2"
+  }
+}
