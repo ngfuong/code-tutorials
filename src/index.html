@@ -14,14 +14,43 @@
       <h1>SwiftUI Tutorials</h1>
     </div>
     <nav>
-      <ul>
-        <li><a href="#overview">Project Overview</a></li>
-        <li><a href="#step1">Step 1</a></li>
-        <li><a href="#step2">Step 2</a></li>
-        <li><a href="#step3">Step 3</a></li>
-        <li><a href="#resources">Resources</a></li>
-      </ul>
+      <div class="nav-menu">
+        <div class="dropdown">
+          <button id="dropdownTutorialToggle" class="form-dropdown-toggle" aria-expanded="false">
+            <span id="dropdownTutorialTitle" class="form-dropdown-title">Tutorial One</span>
+            <div class="arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16L8 12H16L12 16Z" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+          <ul id="dropdownTutorialMenu" class="dropdown-menu hidden">
+            <li><a href="#">Tutorial One</a></li>
+            <li><a href="#">Tutorial One</a></li>
+            <li><a href="#">Tutorial One</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button id="dropdownToggle" class="form-dropdown-toggle" aria-expanded="false">
+            <span id="dropdownTitle" class="form-dropdown-title">Project Overview</span>
+            <div class="arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16L8 12H16L12 16Z" fill="currentColor"/>
+              </svg>
+            </div>
+          </button>
+          <ul id="dropdownMenu" class="dropdown-menu hidden">
+            <li><a href="#overview">Project Overview</a></li>
+            <li><a href="#step1">Step 1</a></li>
+            <li><a href="#step2">Step 2</a></li>
+            <li><a href="#step3">Step 3</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
+
     <div class="controls">
       <fieldset role="radiogroup" class="color-scheme-toggle">
         <legend class="visuallyhidden">Select a color scheme preference</legend>
@@ -53,6 +82,13 @@
         <li>Connect the interface to your data model.</li>
         <li>Preview and run your app.</li>
       </ul>
+    </section>
+
+    <section id="objective1" class="objective">
+      <a class="eyebrow" href="#objective1">Section 1</a>
+      <h2>Add a macOS target to the project</h2>
+      <p>Start by adding a macOS target to the project. Xcode adds a new group and set of starter files for the macOS app, along with the scheme needed to build and run the app. You’ll then add some existing files to the new target.</p>
+      <p>To be able to preview and run the app, be sure your Mac is running macOS Sonoma or later.</p>
     </section>
 
     <div id="tutorials" class="content-wrapper">
@@ -122,7 +158,8 @@
     <p>&copy; 2024 Apple Inc. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="themeToggle.js"></script>
   <script type="module" src="script.js"></script>
+  <script type="module" src="themeToggle.js"></script>
+  <script type="module" src="dropdownToggle.js"></script>
 </body>
 </html>

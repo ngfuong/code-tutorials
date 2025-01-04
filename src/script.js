@@ -1,6 +1,8 @@
 import { initializeThemeToggle } from './themeToggle.js';
+import { initializeDropdown } from './dropdownToggle.js';
 
 initializeThemeToggle();
+initializeDropdown();
 
 const imageContainer = document.getElementById('image-container');
 const images = {
@@ -10,18 +12,18 @@ const images = {
 };
 
 const codeContent = `
-        <div class="code-preview">
-            <pre><code>
-<span class="keyword">import</span> <span class="type">SwiftUI</span>
+<div class="code-preview">
+    <pre><code>
+      <span class="keyword">import</span> <span class="type">SwiftUI</span>
 
-<span class="keyword">struct</span> <span class="type">ContentView</span>: <span class="type">View</span> {
-    <span class="keyword">var</span> <span class="function">body</span>: <span class="type">some</span> <span class="type">View</span> {
-        <span class="type">Text</span>(<span class="string">"Hello, SwiftUI!"</span>)
-            .<span class="function">padding</span>()
-    }
-}
-            </code></pre>
-        </div>`;
+      <span class="keyword">struct</span> <span class="type">ContentView</span>: <span class="type">View</span> {
+          <span class="keyword">var</span> <span class="function">body</span>: <span class="type">some</span> <span class="type">View</span> {
+              <span class="type">Text</span>(<span class="string">"Hello, SwiftUI!"</span>)
+                  .<span class="function">padding</span>()
+          }
+      }
+    </code></pre>
+</div>`;
 
 // Function to set the active step
 function setActiveStep(stepId) {
@@ -51,7 +53,6 @@ function updateImage(stepId) {
   if (stepId === "step4") {
     imageContainer.innerHTML = codeContent;
   } else {
-    console.log(stepId);
     images[stepId].classList.remove('hidden');
     imageContainer.appendChild(images[stepId]);
   }
@@ -82,6 +83,3 @@ window.addEventListener('scroll', () => {
     }
 });
 
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
