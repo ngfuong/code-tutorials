@@ -1,0 +1,83 @@
+.code-preview {
+    padding: 20px;
+    border-radius: 8px;
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 16px;
+    overflow-x: auto;
+    line-height: 1.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-preview .keyword {
+    font-weight: bold;
+}
+
+.code-preview .type {
+    font-style: italic;
+}
+
+.code-preview .string {
+    font-style: italic;
+}
+
+.code-preview .function {
+    font-weight: bold;
+}
+
+.code-preview .comment {
+    font-style: italic;
+}
+
+/* Dark Mode */
+body:not(.dark-mode) .code-preview {
+    background-color: inherit;
+    color: #333333;
+    border: 1px solid #dddddd;
+}
+
+body:not(.dark-mode) .code-preview .keyword {
+    color: #007acc; /* Blue for keywords */
+}
+
+body:not(.dark-mode) .code-preview .type {
+    color: #22863a; /* Green for types */
+}
+
+body:not(.dark-mode) .code-preview .string {
+    color: #b31d28; /* Red for strings */
+}
+
+body:not(.dark-mode) .code-preview .function {
+    color: #8250df; /* Purple for functions */
+}
+
+body:not(.dark-mode) .code-preview .comment {
+    color: #6a737d; /* Gray for comments */
+}
+
+/* Light Mode */
+body.dark-mode .code-preview {
+    background-color: inherit;
+    color: #d4d4d4;
+    border: 1px solid #333333;
+}
+
+body.dark-mode .code-preview .keyword {
+    color: #c586c0; /* Light purple for keywords */
+}
+
+body.dark-mode .code-preview .type {
+    color: #4ec9b0; /* Cyan for types */
+}
+
+body.dark-mode .code-preview .string {
+    color: #ce9178; /* Light red for strings */
+}
+
+body.dark-mode .code-preview .function {
+    color: #dcdcaa; /* Light yellow for functions */
+}
+
+body.dark-mode .code-preview .comment {
+    color: #6a9955; /* Green for comments */
+}
