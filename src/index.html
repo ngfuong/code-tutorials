@@ -22,7 +22,23 @@
         <li><a href="#resources">Resources</a></li>
       </ul>
     </nav>
-    <button id="dark-mode-toggle" class="dark-mode-toggle">🌙 Dark Mode</button>
+    <div class="controls">
+      <fieldset role="radiogroup" class="color-scheme-toggle">
+        <legend class="visuallyhidden">Select a color scheme preference</legend>
+        <label>
+          <input type="radio" name="color-scheme" value="light" id="light-mode">
+          <div class="text">Light</div>
+        </label>
+        <label>
+          <input type="radio" name="color-scheme" value="dark" id="dark-mode">
+          <div class="text">Dark</div>
+        </label>
+        <label>
+          <input type="radio" name="color-scheme" value="auto" id="auto-mode">
+          <div class="text">Auto</div>
+        </label>
+      </fieldset>
+    </div>
   </header>
 
   <!-- Main Content -->
@@ -106,6 +122,7 @@
     <p>&copy; 2024 Apple Inc. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="themeToggle.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

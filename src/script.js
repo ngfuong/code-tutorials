@@ -1,3 +1,7 @@
+import { initializeThemeToggle } from './themeToggle.js';
+
+initializeThemeToggle();
+
 const imageContainer = document.getElementById('image-container');
 const images = {
   step1: document.getElementById('image-step1'),
